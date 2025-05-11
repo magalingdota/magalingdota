@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Blu Aldave | Web Developer Portfolio</title>
+  <meta name="description" content="Learn more about Blu Aldave – a passionate web designer and developer dedicated to creating elegant and accessible digital experiences.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header Styles */
+    .site-header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 2rem;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2c3e50;
+      text-decoration: none;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: #007bff;
+    }
+
+    /* Section Box Styling */
+    .section-box {
+      background-color: #ffffff;
+      border-left: 6px solid #007bff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .section-box:hover {
+      transform: scale(1.01);
+    }
+
+    .section-box h1,
+    .section-box h2 {
+      margin-bottom: 1rem;
+    }
+
+    .section-box p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .about-section h1 {
+      font-size: 2.2rem;
+      color: #007bff;
+    }
+
+    .section-box h2 {
+      font-size: 1.5rem;
+      color: #2c3e50;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding: 1.5rem 0;
+      text-align: center;
+      background-color: #eef1f5;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .main-nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="logo">
+        <a href="index.html">Aldave</a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="mywork.html">My Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="about-section container">
+    <div class="section-box">
+      <h1>About Me</h1>
+      <p>
+        Hello! I'm <strong>Blu Ezie E. Aldave</strong>, a web designer and developer with a passion for crafting digital experiences that are both functional and beautiful.
+        Whether it’s writing clean code or designing seamless user interfaces, I’m driven by a deep curiosity and love for technology.
+      </p>
+    </div>
+
+    <div class="section-box">
+      <h2>My Journey</h2>
+      <p>
+        I'm currently studying Web Development at <strong>ACLC College of Mandaue</strong>, where I’m immersed in learning the latest in front-end and back-end technologies.
+        Through projects, collaboration, and hands-on practice, I've built a solid foundation in HTML, CSS, JavaScript, and responsive design.
+      </p>
+    </div>
+
+    <div class="section-box">
+      <h2>What Drives Me</h2>
+      <p>
+        I believe that a great website is more than just code — it’s about creating something that connects with people.
+        I’m passionate about building accessible, responsive, and engaging web applications that make an impact.
+      </p>
+    </div>
+
+    <div class="section-box">
+      <h2>Outside the Screen</h2>
+      <p>
+        When I'm not coding, you’ll likely find me exploring the outdoors, diving into tech blogs, or learning a new programming language.
+        I enjoy balancing screen time with meaningful offline adventures and personal growth.
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+    </div>
+  </footer>
+
+</body>
+
+</html>

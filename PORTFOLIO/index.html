@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Blu Ezie E. Aldave – Web Designer & Developer" />
+  <meta name="author" content="Blu Ezie E. Aldave" />
+  <title>Blu Aldave – Web Developer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header */
+    .site-header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 2rem;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2c3e50;
+      text-decoration: none;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: #007bff;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .text-content {
+      flex: 1;
+    }
+
+    .text-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .text-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #007bff;
+    }
+
+    .highlight {
+      color: #007bff;
+    }
+
+    .text-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .hero-img img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #007bff;
+    }
+
+    .socials {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .socials img {
+      width: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    .socials a:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding: 1.5rem 0;
+      text-align: center;
+      background-color: #eef1f5;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .main-nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="logo">
+        <a href="index.html">Aldave</a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="mywork.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container">
+    <section class="hero">
+      <div class="text-content">
+        <h3>Hello, I’m <span class="highlight">Blu Ezie E. Aldave</span></h3>
+        <h1>Web <span class="highlight">Developer</span></h1>
+        <p>
+          I’m a student passionate about web development, building responsive and user-friendly websites using HTML, CSS, and JavaScript.
+        </p>
+        <p>
+          Eager to bring ideas to life through engaging web experiences.
+        </p>
+        <a href="contact.html" class="btn">Find Me</a>
+
+        <!-- Social Media -->
+        <div class="socials">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" /></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" /></a>
+        </div>
+      </div>
+
+      <!-- Profile Image -->
+      <div class="hero-img" id="hero-img"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+    </div>
+  </footer>
+
+  <!-- Dynamic Image Script -->
+  <script>
+    function insertImage(containerId, imageUrl, altText = "Profile", width = "220px", height = "220px") {
+      const container = document.getElementById(containerId);
+      const img = document.createElement('img');
+      img.src = imageUrl;
+      img.alt = altText;
+      img.style.width = width;
+      img.style.height = height;
+      container.appendChild(img);
+    }
+
+    insertImage('hero-img', 'images/ading.jpeg', "Blu Ezie's Photo");
+  </script>
+
+</body>
+
+</html>

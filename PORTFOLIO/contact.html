@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Aldave's Portfolio</title>
+  <meta name="description" content="Get in touch with Aldave, a web designer and developer. Reach out for collaborations, inquiries, or opportunities." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header */
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 2rem;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2c3e50;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #007bff;
+    }
+
+    /* Contact Section */
+    .contact {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      margin-top: 2rem;
+    }
+
+    .contact h1 {
+      font-size: 2rem;
+      color: #007bff;
+      margin-bottom: 1rem;
+    }
+
+    .contact h2 {
+      margin-top: 2rem;
+      color: #333;
+    }
+
+    .contact p {
+      font-size: 1.05rem;
+      color: #444;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .contact-info p a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .contact-info p a:hover {
+      text-decoration: underline;
+    }
+
+    .socials {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-btn {
+      background-color: #007bff;
+      border: none;
+      padding: 0.6rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .social-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .social-btn img {
+      width: 24px;
+      height: 24px;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding: 1.5rem 0;
+      text-align: center;
+      background-color: #eef1f5;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .socials {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <a href="index.html">Aldave</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="mywork.html">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <section class="contact">
+      <h1>Contact Me</h1>
+      <p>I'm always open to new opportunities, collaborations, or inquiries. Feel free to get in touch with me using the details below.</p>
+
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <p>Email: <a href="mailto:adingaldave@example.com">adingaldave@example.com</a></p>
+        <p>Phone: <a href="tel:+639562942211">+63 956 294 2211</a></p>
+      </div>
+
+      <h2>Connect with Me</h2>
+      <p>You can also reach me on social media:</p>
+
+      <!-- Social Media Links -->
+      <div class="socials">
+        <a href="#" aria-label="Facebook" class="social-link">
+          <button class="social-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+          </button>
+        </a>
+        <a href="#" aria-label="Instagram" class="social-link">
+          <button class="social-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+          </button>
+        </a>
+        <a href="#" aria-label="Twitter" class="social-link">
+          <button class="social-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+          </button>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+  </footer>
+
+</body>
+
+</html>

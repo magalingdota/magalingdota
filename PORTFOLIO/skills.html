@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills - Aldave's Portfolio</title>
+  <meta name="description" content="Explore the skills and technologies Aldave uses to build websites, from HTML to PHP and JavaScript." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header */
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 2rem;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2c3e50;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #007bff;
+    }
+
+    /* Skills Section */
+    .skills {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      margin-top: 2rem;
+    }
+
+    .skills h1 {
+      font-size: 2rem;
+      color: #007bff;
+      margin-bottom: 1rem;
+    }
+
+    .skills p {
+      margin-bottom: 2rem;
+      color: #444;
+      font-size: 1.05rem;
+    }
+
+    .skill {
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-name {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .progress-bar-container {
+      background-color: #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 24px;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-bar {
+      height: 100%;
+      color: #fff;
+      font-weight: 600;
+      text-align: right;
+      padding: 0 10px;
+      line-height: 24px;
+    }
+
+    .skill-percentage {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding: 1.5rem 0;
+      text-align: center;
+      background-color: #eef1f5;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <a href="index.html">Aldave</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html" class="active">Skills</a></li>
+          <li><a href="mywork.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <section class="skills">
+      <h1>My Skills</h1>
+      <p>Here are some of the skills and technologies I use to build engaging and responsive websites:</p>
+
+      <div class="skill">
+        <span class="skill-name">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174854.png" alt="HTML Icon" width="20" style="vertical-align: middle; margin-right: 8px;">
+          HTML
+        </span>
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: 70%; background-color: #4caf50;">70%</div>
+        </div>
+        <span class="skill-percentage">Proficient in HTML5 and semantic web structures.</span>
+      </div>
+      
+      <div class="skill">
+        <span class="skill-name">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png" alt="JavaScript Icon" width="20" style="vertical-align: middle; margin-right: 8px;">
+          JavaScript
+        </span>
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: 30%; background-color: #f39c12;">30%</div>
+        </div>
+        <span class="skill-percentage">Familiar with DOM manipulation, async functions, and event handling.</span>
+      </div>
+      
+      <div class="skill">
+        <span class="skill-name">
+          <img src="https://cdn-icons-png.flaticon.com/512/919/919826.png" alt="PHP Icon" width="20" style="vertical-align: middle; margin-right: 8px;">
+          PHP / MySQL
+        </span>
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: 50%; background-color: #3498db;">50%</div>
+        </div>
+        <span class="skill-percentage">Comfortable developing dynamic pages and managing databases.</span>
+      </div>
+      
+      <!-- Adobe Illustrator -->
+      <div class="skill">
+        <span class="skill-name">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968525.png" alt="Adobe Illustrator Icon" width="20" style="vertical-align: middle; margin-right: 8px;">
+          Adobe Illustrator
+        </span>
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: 55%; background-color: #ff9f43;">55%</div>
+        </div>
+        <span class="skill-percentage">Experience in creating vector graphics, logos, and illustrations.</span>
+      </div>
+      
+      <!-- Adobe After Effects -->
+      <div class="skill">
+        <span class="skill-name">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Adobe After Effects Icon" width="20" style="vertical-align: middle; margin-right: 8px;">
+          Adobe After Effects
+        </span>
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: 40%; background-color: #9b59b6;">40%</div>
+        </div>
+        <span class="skill-percentage">Basic knowledge in motion graphics and video editing.</span>
+      </div>
+      
+      <div class="skill">
+        <span class="skill-name">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="CSS Icon" width="20" style="vertical-align: middle; margin-right: 8px;">
+          CSS
+        </span>
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: 60%; background-color: #e74c3c;">60%</div>
+        </div>
+        <span class="skill-percentage">Skilled in responsive design using Flexbox and media queries.</span>
+      </div>
+      
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+  </footer>
+
+</body>
+
+</html>
