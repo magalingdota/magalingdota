@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Love Letter Envelope 💌</title>
+<img id="cuteGif" src="images/it.jpg" alt="Top cute gif" />
+
+<!-- Final flower picture, initially hidden -->
+<img id="finalPic" src="images/s.jpg" alt="Final Flower" style="display: none; width: 160px; margin-top: 15px; border-radius: 12px;" />
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+#cuteGif {
+  width: 120px;
+  margin-bottom: 20px;
+  animation: popIn 0.6s ease-out;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: url('./195940b5-f914-4355-93b8-f34034df9dbf.png') no-repeat center top;
+    background-size: 300px auto;
+    background-color: #87b9e7;
+    font-family: 'Comic Neue', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    user-select: none;
+  }
+
+  .container {
+    position: relative;
+    width: 340px;
+    height: 230px;
+    perspective: 1000px;
+    margin-bottom: 15px;
+  }
+
+  .envelope {
+    width: 100%;
+    height: 100%;
+    background: #7ea3d8;
+    position: relative;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transition: transform 1s ease;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    border: 3px solid #5174a8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  #finalGif {
+  margin-top: 12px;
+  width: 150px;
+  border-radius: 12px;
+  animation: popIn 0.6s ease-out;
+}
+
+
+  .open-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f5f5f5;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    text-shadow: 0 0 8px #3c5492;
+    z-index: 2;
+  }
+
+  .container.open .open-text {
+    display: none;
+  }
+
+  .message {
+    position: relative;
+    top: 0;
+    padding: 22px 26px;
+    font-size: 16px;
+    color: #1b2a57;
+    background: #c7d8ff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    opacity: 0;
+    max-height: 165px;
+    width: 90%;
+    overflow-y: auto;
+    transition: opacity 1s ease 1s;
+    z-index: 1;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  .container.open .flap {
+    transform: translateX(-50%) rotateX(-140deg);
+    box-shadow: none;
+  }
+
+  .container.open .message {
+    opacity: 1;
+  }
+
+  /* Scrollbar for message */
+  .message::-webkit-scrollbar {
+    width: 6px;
+  }
+  .message::-webkit-scrollbar-thumb {
+    background-color: #5174a8;
+    border-radius: 3px;
+  }
+
+  /* Next button styling */
+  #nextBtn {
+    padding: 12px 28px;
+    background-color: #5174a8;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(81,116,168,0.7);
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+
+  #nextBtn:disabled {
+    background-color: #8a9ec6;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  #nextBtn:hover:not(:disabled) {
+    background-color: #3c5492;
+  }
+
+  /* Hidden state for envelope */
+  .hidden {
+    display: none;
+  }
+
+  /* The final message styling */
+  #finalMessage {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1b2a57;
+    margin-top: 20px;
+    font-family: 'Comic Neue', cursive, sans-serif;
+    text-align: center;
+    display: none;
+  }
+
+  @keyframes popIn {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+#finalMessage {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1b2a57;
+  margin-top: 20px;
+  font-family: 'Comic Neue', cursive, sans-serif;
+  text-align: center;
+  display: none;
+  position: relative;
+  z-index: 10;
+}
+
+#flower {
+  font-size: 60px;
+  opacity: 0;
+  animation: popIn 0.6s forwards ease-out;
+  margin: 0 auto 15px auto;
+}
+
+.flower-confetti {
+  position: fixed;
+  top: 100%;
+  font-size: 24px;
+  animation: floatUp 3s forwards ease-in;
+  pointer-events: none;
+  user-select: none;
+  z-index: 15;
+}
+
+</style>
+</head>
+<body>
+<div id="flower">🌸</div>
+
+<div class="container" onclick="openEnvelope()" aria-label="Envelope with compliments">
+  <div class="envelope" role="button" tabindex="0" aria-expanded="false" aria-controls="complimentText" aria-describedby="instruction">
+    <div class="flap"></div>
+    <div class="open-text">
+      <div>OPEN</div>
+      <div style="font-size: 14px; font-style: italic;">if naka eyeglass ka &lt;3</div>
+    </div>
+    <div id="complimentText" class="message" role="region" aria-live="polite" aria-atomic="true">
+      <h3 style="margin-top: 0; text-align: center;">To Lalove 💙</h3>
+      <p>You're so pretty and cute when you wear your glasses. 😊</p>
+    </div>
+  </div>
+</div>
+
+<button id="nextBtn" disabled aria-disabled="true" aria-label="Show next compliment">Next ➡️</button>
+
+<div id="finalMessage" aria-live="polite" role="alert">
+  You're so gwapa miss IT 💖
+  <br />
+  <img src="images/h.jpg" alt="Cute Happy Cat GIF" id="finalGif" />
+</div>
+
+
+
+<script>
+  const compliments = [
+    "You're so pretty and cute when you wear your glasses, nice kaytag height difference ahem miss IT and mr IT. 😊",
+    "Lindot kaykag vibes, hug ko balik lalove please, langan man bi warm hugs kaayo.",
+    "Your humor always makes me smile og kanang hapak nimo dae yawa makamingaw bah, samot na taga chika kay naay kusi hugsHAHAAHAHA.",
+    "Your physical touch is my favorite comfort og ang kusi ahem baka naman kiss ko bi HAHAHAHAHAHA. MWAAA 💋",
+    "You're truly one of a kind, and I love you so much! 💖"
+  ];
+
+  const container = document.querySelector('.container');
+  const envelope = document.querySelector('.envelope');
+  const flap = document.querySelector('.flap');
+  const messageDiv = document.getElementById('complimentText');
+  const nextBtn = document.getElementById('nextBtn');
+  const finalMessage = document.getElementById('finalMessage');
+  const flower = document.getElementById('flower');
+
+  let currentIndex = 0;
+
+  function updateMessage() {
+    messageDiv.innerHTML = `
+      <h3 style="margin-top: 0; text-align: center;">To Lalove 💙</h3>
+      <p>${compliments[currentIndex]}</p>
+    `;
+  }
+
+  function openEnvelope() {
+    if (!container.classList.contains('open')) {
+      container.classList.add('open');
+      envelope.setAttribute('aria-expanded', 'true');
+      nextBtn.disabled = false;
+      nextBtn.setAttribute('aria-disabled', 'false');
+      updateMessage(); // Show first compliment on open
+    }
+  }
+
+  function launchFlowerConfetti() {
+    const colors = ['🌸', '💐', '🌺', '🌷', '🌹'];
+    for (let i = 0; i < 20; i++) {
+      const confetti = document.createElement('div');
+      confetti.className = 'flower-confetti';
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.fontSize = (16 + Math.random() * 20) + 'px';
+      confetti.style.animationDelay = (Math.random() * 3) + 's';
+      confetti.textContent = colors[Math.floor(Math.random() * colors.length)];
+      document.body.appendChild(confetti);
+
+      confetti.addEventListener('animationend', () => confetti.remove());
+    }
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    if (currentIndex < compliments.length) {
+      updateMessage();
+    } else {
+      // End of compliments
+      container.classList.add('hidden');
+      nextBtn.classList.add('hidden');
+
+      // Hide the top GIF
+document.getElementById('cuteGif').style.display = 'none';
+
+// Show the final message
+finalMessage.style.display = 'block';
+// Hide flower emoji
+flower.style.display = 'none';
+
+// Show final picture
+const finalPic = document.getElementById('finalPic');
+finalPic.style.display = 'block';
+
+launchFlowerConfetti();
+
+
+    }
+  });
+
+  // Accessibility: allow Enter or Space key to open envelope
+  envelope.addEventListener('keydown', e => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openEnvelope();
+    }
+  });
+</script>
+
+
+</body>
+</html>
