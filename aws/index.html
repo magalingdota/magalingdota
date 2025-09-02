@@ -3,27 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <title>Love Letter Envelope 💌</title>
-<img id="cuteGif" src="aws/images/it.jpg" alt="Top cute gif" />
-<img id="finalPic" src="aws/images/s.jpg" alt="Final Flower" style="display: none; width: 160px; margin-top: 15px; border-radius: 12px;" />
-<img src="aws/images/h.gif" alt="Cute Happy Cat GIF" id="finalGif" />
-
-
-
-<!-- Final flower picture, initially hidden -->
-<img id="finalPic" src="images/s.jpg" alt="Final Flower" style="display: none; width: 160px; margin-top: 15px; border-radius: 12px;" />
-
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
-#cuteGif {
-  width: 120px;
-  margin-bottom: 20px;
-  animation: popIn 0.6s ease-out;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-  
   body {
     margin: 0;
     padding: 0;
@@ -37,6 +19,14 @@
     justify-content: center;
     height: 100vh;
     user-select: none;
+  }
+
+  #cuteGif {
+    width: 120px;
+    margin-bottom: 20px;
+    animation: popIn 0.6s ease-out;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   .container {
@@ -64,13 +54,6 @@
     align-items: center;
     overflow: hidden;
   }
-  #finalGif {
-  margin-top: 12px;
-  width: 150px;
-  border-radius: 12px;
-  animation: popIn 0.6s ease-out;
-}
-
 
   .open-text {
     position: absolute;
@@ -169,89 +152,85 @@
     display: none;
   }
 
+  #flower {
+    font-size: 60px;
+    opacity: 0;
+    animation: popIn 0.6s forwards ease-out;
+    margin: 0 auto 15px auto;
+  }
+
+  .flower-confetti {
+    position: fixed;
+    top: 100%;
+    font-size: 24px;
+    animation: floatUp 3s forwards ease-in;
+    pointer-events: none;
+    user-select: none;
+    z-index: 15;
+  }
+
+  #finalGif {
+    display: none; /* Hide initially */
+    margin-top: 12px;
+    width: 150px;
+    border-radius: 12px;
+    animation: popIn 0.6s ease-out;
+  }
+
   @keyframes popIn {
-  0% {
-    transform: scale(0.2);
-    opacity: 0;
+    0% {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+    70% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
   }
-  70% {
-    transform: scale(1.2);
-    opacity: 1;
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-150px) rotate(360deg);
+      opacity: 0;
+    }
   }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-150px) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-#finalMessage {
-  font-size: 24px;
-  font-weight: 700;
-  color: #1b2a57;
-  margin-top: 20px;
-  font-family: 'Comic Neue', cursive, sans-serif;
-  text-align: center;
-  display: none;
-  position: relative;
-  z-index: 10;
-}
-
-#flower {
-  font-size: 60px;
-  opacity: 0;
-  animation: popIn 0.6s forwards ease-out;
-  margin: 0 auto 15px auto;
-}
-
-.flower-confetti {
-  position: fixed;
-  top: 100%;
-  font-size: 24px;
-  animation: floatUp 3s forwards ease-in;
-  pointer-events: none;
-  user-select: none;
-  z-index: 15;
-}
-
 </style>
 </head>
 <body>
-<div id="flower">🌸</div>
+  <img id="cuteGif" src="aws/images/it.jpg" alt="Top cute gif" />
 
-<div class="container" onclick="openEnvelope()" aria-label="Envelope with compliments">
-  <div class="envelope" role="button" tabindex="0" aria-expanded="false" aria-controls="complimentText" aria-describedby="instruction">
-    <div class="flap"></div>
-    <div class="open-text">
-      <div>OPEN</div>
-      <div style="font-size: 14px; font-style: italic;">if naka eyeglass ka &lt;3</div>
-    </div>
-    <div id="complimentText" class="message" role="region" aria-live="polite" aria-atomic="true">
-      <h3 style="margin-top: 0; text-align: center;">To Lalove 💙</h3>
-      <p>You're so pretty and cute when you wear your glasses. 😊</p>
+  <div id="flower">🌸</div>
+
+  <div class="container" onclick="openEnvelope()" aria-label="Envelope with compliments">
+    <div class="envelope" role="button" tabindex="0" aria-expanded="false" aria-controls="complimentText" aria-describedby="instruction">
+      <div class="flap"></div>
+      <div class="open-text">
+        <div>OPEN</div>
+        <div style="font-size: 14px; font-style: italic;">if naka eyeglass ka &lt;3</div>
+      </div>
+      <div id="complimentText" class="message" role="region" aria-live="polite" aria-atomic="true">
+        <h3 style="margin-top: 0; text-align: center;">To Lalove 💙</h3>
+        <p>You're so pretty and cute when you wear your glasses. 😊</p>
+      </div>
     </div>
   </div>
-</div>
 
-<button id="nextBtn" disabled aria-disabled="true" aria-label="Show next compliment">Next ➡️</button>
+  <button id="nextBtn" disabled aria-disabled="true" aria-label="Show next compliment">Next ➡️</button>
 
-<div id="finalMessage" aria-live="polite" role="alert">
-  You're so gwapa miss IT 💖
-  <br />
-  <img src="aws/images/h.gif" alt="Cute Happy Cat GIF" id="finalGif" />
-</div>
+  <img id="finalPic" src="aws/images/s.jpg" alt="Final Flower" style="display: none; width: 160px; margin-top: 15px; border-radius: 12px;" />
 
-
-
+  <div id="finalMessage" aria-live="polite" role="alert">
+    You're so gwapa miss IT 💖
+    <br />
+    <img src="aws/images/h.gif" alt="Cute Happy Cat GIF" id="finalGif" />
+  </div>
 
 <script>
   const compliments = [
@@ -264,11 +243,13 @@
 
   const container = document.querySelector('.container');
   const envelope = document.querySelector('.envelope');
-  const flap = document.querySelector('.flap');
   const messageDiv = document.getElementById('complimentText');
   const nextBtn = document.getElementById('nextBtn');
   const finalMessage = document.getElementById('finalMessage');
   const flower = document.getElementById('flower');
+  const finalPic = document.getElementById('finalPic');
+  const cuteGif = document.getElementById('cuteGif');
+  const finalGif = document.getElementById('finalGif');
 
   let currentIndex = 0;
 
@@ -313,21 +294,16 @@
       container.classList.add('hidden');
       nextBtn.classList.add('hidden');
 
-      // Hide the top GIF
-document.getElementById('cuteGif').style.display = 'none';
+      cuteGif.style.display = 'none';
 
-// Show the final message
-finalMessage.style.display = 'block';
-// Hide flower emoji
-flower.style.display = 'none';
+      finalMessage.style.display = 'block';
+      finalGif.style.display = 'block'; // Show cat gif
 
-// Show final picture
-const finalPic = document.getElementById('finalPic');
-finalPic.style.display = 'block';
+      flower.style.display = 'none';
 
-launchFlowerConfetti();
+      finalPic.style.display = 'block';
 
-
+      launchFlowerConfetti();
     }
   });
 
@@ -339,10 +315,5 @@ launchFlowerConfetti();
     }
   });
 </script>
-
-
 </body>
 </html>
-
-
-
